@@ -23,6 +23,7 @@
     
     [self configureView];
     [self configureData];
+    [self configureWebView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -105,6 +106,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)configureWebView {
+    UIWebView *useWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"UserInfo" ofType:@"html"];
+    @try {
+        NSURL *url = [[NSURL alloc] initWithString:filePath];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [useWebView loadRequest:request];
+    } @catch (NSException *exception) {
+        NSLog(@"exception: %@", exception.reason);
+    } @finally {
+        NSLog(@"KKfinally");
+    }
+}
+
 #pragma mark- getter
 
 - (UITableView *)tableView {
@@ -115,6 +130,7 @@
     }
     return _tableView;
 }
+
 
 
 @end
