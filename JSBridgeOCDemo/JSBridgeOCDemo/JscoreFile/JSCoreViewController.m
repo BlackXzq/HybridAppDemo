@@ -7,8 +7,12 @@
 //
 
 #import "JSCoreViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "InfoViewController.h"
 
-@interface JSCoreViewController ()
+NSString *const JSCONTEXTPATH = @"documentView.webView.mainFrame.javaScriptContext";
+
+@interface JSCoreViewController ()<UIWebViewDelegate>
 @property (nonatomic, strong) UIWebView *useWebView;
 @end
 
@@ -16,14 +20,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [super viewDidLoad];
     _useWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    _useWebView.scrollView.bounces = false;
+    _useWebView.delegate = self;
     [self.view addSubview:_useWebView];
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleApp" ofType:@"html"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"UserInfo" ofType:@"html"];
     //    NSURL *url = [[NSURL alloc] initWithString:@"https://www.cnblogs.com/wangyingblog/p/5583825.html"];
     NSURL *url = [[NSURL alloc] initWithString:filePath];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_useWebView loadRequest:request];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加文本" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarClick)];
+}
+
+- (void)rightBarClick {
+    NSString *message = @"messagemessage";
+    NSString *jsActionStr = [NSString stringWithFormat:@"addPElement('%@');", message];
+    JSContext *context = [self.useWebView valueForKeyPath:JSCONTEXTPATH];
+    [context evaluateScript:jsActionStr];
     
 }
 
@@ -32,14 +48,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark-  UIWebViewDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"webViewDidFinishLoad");
+    [self addCustomActions];
 }
-*/
+
+#pragma mark- add jscontext
+#pragma mark - private method
+- (void)addCustomActions
+{
+    JSContext *context = [self.useWebView valueForKeyPath:JSCONTEXTPATH];
+    __weak typeof(self) weakSelf = self;
+    context[@"pushInfo"] = ^() {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            InfoViewController *infoCtl = [[InfoViewController alloc] init];
+            [weakSelf.navigationController pushViewController:infoCtl animated:YES];
+        });
+    };
+}
+
+
+
 
 @end

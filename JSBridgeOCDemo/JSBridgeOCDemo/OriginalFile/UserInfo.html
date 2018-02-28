@@ -21,7 +21,7 @@
         <div>
             用户名：<input id="userName" /><br />
             手机号：<input id="tel" /><br />
-            <input type="button" id="myButton" value="提交"/>
+            <input type="button" id="myButton" value="注册"/>
         </div>
 		
 	</body>
@@ -37,6 +37,7 @@
         }
         
         function addPElement(mess) {
+            alert(mess);
             var pE = document.createElement("h3");
             var tXt = document.createTextNode(mess);
             pE.appendChild(tXt);
@@ -60,11 +61,12 @@
 <!--                JS2OCAction('message2');-->
                 return;
             }
-            JS2OCAction('action');
+            pushInfo()
+            JS2OCAction('info');
         }
     
         function JS2OCAction(path) {
-            var url = 'JSBridgeOCDemo://'+path;
+            var url = 'jsbridgeocdemo://bridge.com/'+path+'?name=kkkk&phone=123445';
             console.log('url: '+url);
             var iframe = document.createElement('iframe');
             iframe.style.width = '1px';

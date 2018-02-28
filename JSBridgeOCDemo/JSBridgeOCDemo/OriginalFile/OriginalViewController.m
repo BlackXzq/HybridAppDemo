@@ -7,6 +7,7 @@
 //
 
 #import "OriginalViewController.h"
+#import "InfoViewController.h"
 
 @interface OriginalViewController ()<UIWebViewDelegate>
 @property (nonatomic, strong) UIWebView *useWebView;
@@ -45,11 +46,27 @@
 #pragma mark-  UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    
     NSLog(@"urllink: %@", request.URL.absoluteString);
+    if ([request.URL.absoluteString hasPrefix:@"jsbridgeocdemo://bridge.com/"]) {
+        if ([request.URL.absoluteString containsString:@"info"]) {
+            InfoViewController *infoCtl = [[InfoViewController alloc] init];
+            [self.navigationController pushViewController:infoCtl animated:YES];
+            return NO;
+        }
+    }
     return YES;
 }
-
-
+//webview加载完成。。。
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"webViewDidFinishLoad");
+}
+//webview开始加载。。。
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    NSLog(@"webViewDidStartLoad");
+}
+//webview加载失败。。。
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"didFailLoadWithError");
+}
 
 @end

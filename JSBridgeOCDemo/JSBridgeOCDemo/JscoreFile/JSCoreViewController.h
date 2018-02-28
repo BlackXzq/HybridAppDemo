@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const JSCONTEXTPATH;
+
 @interface JSCoreViewController : UIViewController
 
 @end

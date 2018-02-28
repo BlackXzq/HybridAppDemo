@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C15C551220454E3100062595 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15C551020454E3100062595 /* InfoViewController.m */; };
+		C15C551320454E3100062595 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15C551120454E3100062595 /* InfoViewController.xib */; };
 		C15FC4DF2022B04800A102FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C15FC4DE2022B04800A102FD /* AppDelegate.m */; };
 		C15FC4E22022B04800A102FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15FC4E12022B04800A102FD /* ViewController.m */; };
 		C15FC4E52022B04800A102FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15FC4E32022B04800A102FD /* Main.storyboard */; };
@@ -26,6 +28,9 @@
 		21CA2D9432826208446332A7 /* Pods-JSBridgeOCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSBridgeOCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSBridgeOCDemo/Pods-JSBridgeOCDemo.release.xcconfig"; sourceTree = "<group>"; };
 		760D44372ED64801ADFEB0F4 /* Pods-JSBridgeOCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSBridgeOCDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSBridgeOCDemo/Pods-JSBridgeOCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		804986DDCB45E74F066F6237 /* libPods-JSBridgeOCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSBridgeOCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15C550F20454E3100062595 /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		C15C551020454E3100062595 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		C15C551120454E3100062595 /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		C15FC4DA2022B04800A102FD /* JSBridgeOCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSBridgeOCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15FC4DD2022B04800A102FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C15FC4DE2022B04800A102FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +97,9 @@
 				C15FC4DE2022B04800A102FD /* AppDelegate.m */,
 				C15FC4E02022B04800A102FD /* ViewController.h */,
 				C15FC4E12022B04800A102FD /* ViewController.m */,
+				C15C550F20454E3100062595 /* InfoViewController.h */,
+				C15C551020454E3100062595 /* InfoViewController.m */,
+				C15C551120454E3100062595 /* InfoViewController.xib */,
 				C15FC4FC202AE1B300A102FD /* JsbridgeFile */,
 				C15FC4FA202AE1B300A102FD /* JscoreFile */,
 				C15FC4FB202AE1B300A102FD /* OriginalFile */,
@@ -209,6 +217,7 @@
 				C15FC4E52022B04800A102FD /* Main.storyboard in Resources */,
 				C15FC4F820297D7000A102FD /* test1.html in Resources */,
 				C15FC4F42022B4B000A102FD /* ExampleApp.html in Resources */,
+				C15C551320454E3100062595 /* InfoViewController.xib in Resources */,
 				C15FC507202AF04B00A102FD /* UserInfo.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +285,7 @@
 				C15FC4DF2022B04800A102FD /* AppDelegate.m in Sources */,
 				C15FC4FF202AE21800A102FD /* OriginalViewController.m in Sources */,
 				C15FC505202AE23B00A102FD /* JSBridgeViewController.m in Sources */,
+				C15C551220454E3100062595 /* InfoViewController.m in Sources */,
 				C15FC502202AE22900A102FD /* JSCoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

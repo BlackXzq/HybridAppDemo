@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JSBridgeOCDemo/JsbridgeFile/JSBridgeViewController.m"
+            timestampString = "541493683.453781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-rightBarClick"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JSBridgeViewController rightBarClick]"
+                  moduleName = "JSBridgeOCDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/black/HybridAppDemo/JSBridgeOCDemo/JSBridgeOCDemo/JsbridgeFile/JSBridgeViewController.m"
+                  timestampString = "541493683.4749351"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[JSBridgeViewController rightBarClick]_block_invoke"
+                  moduleName = "JSBridgeOCDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/black/HybridAppDemo/JSBridgeOCDemo/JSBridgeOCDemo/JsbridgeFile/JSBridgeViewController.m"
+                  timestampString = "541493683.477487"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
