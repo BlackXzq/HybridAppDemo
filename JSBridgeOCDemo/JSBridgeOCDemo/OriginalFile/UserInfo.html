@@ -61,12 +61,27 @@
 <!--                JS2OCAction('message2');-->
                 return;
             }
-            pushInfo()
-            JS2OCAction('info');
+<!--            pushInfo()-->
+<!--            JS2OCAction('action');-->
+
+
+
+            //准备要传给native的数据，包括指令，数据，回调等
+            var data = {
+                action:'xxxxaction',
+                params:'xxxxparams',
+                callback:'xxxxcallback',
+            };
+            //直接使用这个客户端注入的函数
+            callNativeFunction(data);
+            
+            
+            //JS直接使用这个客户端注入的函数
+            AJSDKModule.callJSToNative("action");
         }
     
         function JS2OCAction(path) {
-            var url = 'jsbridgeocdemo://bridge.com/'+path+'?name=kkkk&phone=123445';
+            var url = 'jsbridge://www.bridge.com/'+path+'?name=kkkk&phone=123445';
             console.log('url: '+url);
             var iframe = document.createElement('iframe');
             iframe.style.width = '1px';

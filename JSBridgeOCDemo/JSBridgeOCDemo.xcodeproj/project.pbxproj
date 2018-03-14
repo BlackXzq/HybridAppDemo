@@ -22,6 +22,7 @@
 		C15FC505202AE23B00A102FD /* JSBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15FC504202AE23B00A102FD /* JSBridgeViewController.m */; };
 		C15FC507202AF04B00A102FD /* UserInfo.html in Resources */ = {isa = PBXBuildFile; fileRef = C15FC506202AF04A00A102FD /* UserInfo.html */; };
 		C16B988D370EDD7353893031 /* libPods-JSBridgeOCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 804986DDCB45E74F066F6237 /* libPods-JSBridgeOCDemo.a */; };
+		C1D7499220565C0000C28247 /* OrigiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D7499120565C0000C28247 /* OrigiViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		C15FC503202AE23B00A102FD /* JSBridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridgeViewController.h; sourceTree = "<group>"; };
 		C15FC504202AE23B00A102FD /* JSBridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridgeViewController.m; sourceTree = "<group>"; };
 		C15FC506202AF04A00A102FD /* UserInfo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UserInfo.html; sourceTree = "<group>"; };
+		C1D7499020565C0000C28247 /* OrigiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrigiViewController.h; sourceTree = "<group>"; };
+		C1D7499120565C0000C28247 /* OrigiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrigiViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				C15FC506202AF04A00A102FD /* UserInfo.html */,
 				C15FC4FD202AE21800A102FD /* OriginalViewController.h */,
 				C15FC4FE202AE21800A102FD /* OriginalViewController.m */,
+				C1D7499020565C0000C28247 /* OrigiViewController.h */,
+				C1D7499120565C0000C28247 /* OrigiViewController.m */,
 			);
 			path = OriginalFile;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C15FC4E22022B04800A102FD /* ViewController.m in Sources */,
+				C1D7499220565C0000C28247 /* OrigiViewController.m in Sources */,
 				C15FC4ED2022B04800A102FD /* main.m in Sources */,
 				C15FC4DF2022B04800A102FD /* AppDelegate.m in Sources */,
 				C15FC4FF202AE21800A102FD /* OriginalViewController.m in Sources */,

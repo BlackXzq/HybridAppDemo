@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "OriginalViewController.h"
+#import "OrigiViewController.h"
 #import "JSCoreViewController.h"
 #import "JSBridgeViewController.h"
 
@@ -41,7 +42,8 @@
 //初始化数据
 - (void)configureData {
     self.actionList = [NSMutableArray array];
-    [self.actionList addObject:@[@"使用传统上方法与JS交互", @"originalInteractiveAction"]];
+    [self.actionList addObject:@[@"使用传统上方法与JS交互WB", @"originalInteractiveAction"]];
+    [self.actionList addObject:@[@"使用传统上方法与JS交互WK", @"originalInteractiveAction_WK"]];
     [self.actionList addObject:@[@"使用JavaScriptCore与JS交互", @"jscoreInteractiveAction"]];
     [self.actionList addObject:@[@"使用WebViewJavascriptBridge与JS交互", @"jsbridgeInteractiveAction"]];
 }
@@ -54,6 +56,11 @@
 //使用传统上方法与JS交互
 - (void)originalInteractiveAction {
     UIViewController *orginCtl = [[OriginalViewController alloc] init];
+    [self.navigationController pushViewController:orginCtl animated:true];
+}
+
+- (void)originalInteractiveAction_WK {
+    UIViewController *orginCtl = [[OrigiViewController alloc] init];
     [self.navigationController pushViewController:orginCtl animated:true];
 }
 //使用JavaScriptCore与JS交互

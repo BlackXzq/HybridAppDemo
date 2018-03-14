@@ -7,20 +7,21 @@
 //
 
 #import "JSCoreViewController.h"
-#import <JavaScriptCore/JavaScriptCore.h>
 #import "InfoViewController.h"
 
 NSString *const JSCONTEXTPATH = @"documentView.webView.mainFrame.javaScriptContext";
 
 @interface JSCoreViewController ()<UIWebViewDelegate>
 @property (nonatomic, strong) UIWebView *useWebView;
+@property (nonatomic, strong) AJSDKModule *module;
 @end
 
 @implementation JSCoreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [super viewDidLoad];
+    
+    
     _useWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     _useWebView.scrollView.bounces = false;
     _useWebView.delegate = self;
@@ -31,6 +32,10 @@ NSString *const JSCONTEXTPATH = @"documentView.webView.mainFrame.javaScriptConte
     NSURL *url = [[NSURL alloc] initWithString:filePath];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_useWebView loadRequest:request];
+    
+    self.module = [AJSDKModule new];
+    JSContext *context = [self.useWebView valueForKeyPath:JSCONTEXTPATH];
+    context[@"AJSDKModule"] = self.module;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加文本" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarClick)];
 }
@@ -48,6 +53,7 @@ NSString *const JSCONTEXTPATH = @"documentView.webView.mainFrame.javaScriptConte
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark-  UIWebViewDelegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -59,17 +65,26 @@ NSString *const JSCONTEXTPATH = @"documentView.webView.mainFrame.javaScriptConte
 #pragma mark - private method
 - (void)addCustomActions
 {
+    //拿到当前WebView的JS上下文
     JSContext *context = [self.useWebView valueForKeyPath:JSCONTEXTPATH];
-    __weak typeof(self) weakSelf = self;
-    context[@"pushInfo"] = ^() {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            InfoViewController *infoCtl = [[InfoViewController alloc] init];
-            [weakSelf.navigationController pushViewController:infoCtl animated:YES];
-        });
+    //给这个上下文注入callNativeFunction函数当做JS对象
+    context[@"callNativeFunction"] = ^(JSValue *paramData) {
+        NSLog(@"paramData: %@", paramData.toObject);
+        //1 解读JS传过来的JSValue  data数据
+        //2 取出指令参数，确认要发起的native调用的指令是什么
+        //3 取出数据参数，拿到JS传过来的数据
+        //4 根据指令调用对应的native方法，传递数据
+        //5 此时还可以将客户端的数据同步返回！
     };
 }
 
 
+@end
 
 
+@implementation AJSDKModule
+
+- (void)showJStoNative:(NSString *)config {
+    NSLog(@"config: %@", config);
+}
 @end
